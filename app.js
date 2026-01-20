@@ -12,6 +12,8 @@ const els = {
     hr50: document.getElementById('total50'),
     hr100: document.getElementById('total100'),
     travel: document.getElementById('totalTravel'),
+    hr50n: document.getElementById('total50n'),
+    hr100n: document.getElementById('total100n'),
     food8: document.getElementById('totalFood8'),
     food10: document.getElementById('totalFood10'),
     guard: document.getElementById('totalGuard'),
@@ -48,6 +50,8 @@ function addEntry(e) {
         hr50: parseFloat(document.getElementById('hr50').value) || 0,
         hr100: parseFloat(document.getElementById('hr100').value) || 0,
         travel: parseFloat(document.getElementById('travel').value) || 0,
+        hr50n: parseFloat(document.getElementById('hr50n').value) || 0,
+        hr100n: parseFloat(document.getElementById('hr100n').value) || 0,
         food8: document.getElementById('food8').checked,
         food10: document.getElementById('food10').checked,
         guard: document.getElementById('guard').checked,
@@ -83,6 +87,8 @@ function updateDashboard() {
         hr50: 0,
         hr100: 0,
         travel: 0,
+        hr50n: 0,
+        hr100n: 0,
         food8: 0,
         food10: 0,
         guard: 0,
@@ -94,6 +100,8 @@ function updateDashboard() {
         totals.hr50 += e.hr50;
         totals.hr100 += e.hr100;
         totals.travel += e.travel;
+        totals.hr50n += (e.hr50n || 0);
+        totals.hr100n += (e.hr100n || 0);
         if (e.food8) totals.food8++;
         if (e.food10) totals.food10++;
         if (e.guard) totals.guard++;
@@ -104,6 +112,8 @@ function updateDashboard() {
     els.hr50.textContent = totals.hr50;
     els.hr100.textContent = totals.hr100;
     els.travel.textContent = totals.travel;
+    els.hr50n.textContent = totals.hr50n;
+    els.hr100n.textContent = totals.hr100n;
     els.food8.textContent = totals.food8;
     els.food10.textContent = totals.food10;
     els.guard.textContent = totals.guard;
@@ -132,6 +142,8 @@ function render() {
             <td>${e.hr50 || '-'}</td>
             <td>${e.hr100 || '-'}</td>
             <td>${e.travel || '-'}</td>
+            <td>${e.hr50n || '-'}</td>
+            <td>${e.hr100n || '-'}</td>
             <td>${e.food8 ? '✔️' : '-'}</td>
             <td>${e.food10 ? '✔️' : '-'}</td>
             <td>${e.guard ? '✔️' : '-'}</td>

@@ -133,6 +133,10 @@ h2 {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.two-cols {
+    grid-template-columns: 1fr 1fr;
+}
+
 .checkbox-group {
     display: flex;
     flex-wrap: wrap;
